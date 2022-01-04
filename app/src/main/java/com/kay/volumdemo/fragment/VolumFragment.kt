@@ -32,7 +32,14 @@ class VolumFragment : Fragment() {
         binding.setVolumeBtn.setOnClickListener{
             val volumString = binding.setVolumeInput.editText?.text?.toString()
             val volume = volumString?.toIntOrNull()
-            volume?.let { binding.volumeView.updateVolumeLevel(it) }
+            volume?.let {
+                var finalVolume = it
+                if (finalVolume < 0) {
+                    finalVolume = 0
+                } else if (finalVolume > 100) {
+                    finalVolume = 100
+                }
+                binding.volumeView.updateVolumeLevel(finalVolume) }
         }
     }
 

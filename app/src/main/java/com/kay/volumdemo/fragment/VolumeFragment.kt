@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.kay.volumdemo.R
 import com.kay.volumdemo.databinding.FragmentVolumBinding
 
-class VolumFragment : Fragment() {
+class VolumeFragment : Fragment() {
 
     private var _binding: FragmentVolumBinding? = null
     private val binding get() = _binding!!

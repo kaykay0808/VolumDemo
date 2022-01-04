@@ -6,15 +6,39 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.kay.volumdemo.R
+import com.kay.volumdemo.databinding.FragmentVolumBinding
 
 class VolumFragment : Fragment() {
+
+    private var _binding: FragmentVolumBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_volum, container, false)
+        _binding = FragmentVolumBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.setLinesBtn.setOnClickListener{
+            val lineString = binding.setLineInput.editText?.text?.toString()
+            val numberOfLines = lineString?.toIntOrNull()
+            numberOfLines?.let { binding.volumeView.updateNumberOfLines(it) }
+        }
+
+        binding.setVolumeBtn.setOnClickListener{
+            val volumString = binding.setVolumeInput.editText?.text?.toString()
+            val volume = volumString?.toIntOrNull()
+            volume?.let { binding.volumeView.updateVolumeLevel(it) }
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 }

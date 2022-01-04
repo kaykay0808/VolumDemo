@@ -15,13 +15,13 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="15dp"
         android:text="@string/set_volume"
-        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
+        app:layout_constraintBottom_toBottomOf="@+id/setVolumeInput"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textInputLayout"
-        app:layout_constraintTop_toTopOf="@+id/textInputLayout" />
+        app:layout_constraintStart_toEndOf="@+id/setVolumeInput"
+        app:layout_constraintTop_toTopOf="@+id/setVolumeInput" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/setVolumeInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -32,7 +32,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="130dp"
             android:layout_height="wrap_content"
-            android:hint="SET VOLUME"
+            android:hint="@string/set_volume"
             android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -42,33 +42,35 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="15dp"
         android:text="@string/set_lines"
-        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout2"
+        app:layout_constraintBottom_toBottomOf="@+id/setLineInput"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textInputLayout2"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        app:layout_constraintStart_toEndOf="@+id/setLineInput"
+        app:layout_constraintTop_toBottomOf="@+id/setVolumeInput" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
+        android:id="@+id/setLineInput"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+        app:layout_constraintStart_toStartOf="@+id/setVolumeInput"
+        app:layout_constraintTop_toBottomOf="@+id/setVolumeInput">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="SET LINES"
+            android:hint="@string/set_lines"
             android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.kay.volumdemo.VolumView
+        android:id="@+id/volumeView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="24dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/setLineInput"
         app:volumColor="@color/purple_500"
         app:volumLevel="10"
         app:volumLines="10" />

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="volumView">
+        <attr name="volumColor" format="color" />
+        <attr name="volumLevel" format="integer" />
+        <attr name="volumLines" format="integer" />
+
+    </declare-styleable>
+</resources>
